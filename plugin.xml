@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="com.realizedmobile.PinterestPlugin" version="1.0.0">
+	<name>PinterestPlugin</name>
+	<description>Cordova plugin that handles Pinterest integration in mobile apps.</description>
+	<author>RealizedMobile</author>
+	<keywords>pinterest,cordova,realizedmobile</keywords>
+	<license>Apache 2.0 License</license>
+	<engines>
+		<engine name="cordova" version=">=3.0.0"/>
+	</engines>
+	<js-module src="www/pinterest.js" name="PinterestPlugin">
+		<clobbers target="PinterestPlugin"/>
+	</js-module>
+	<!-- android -->
+	<!-- ios -->
+	<platform name="ios">
+		<config-file target="config.xml" parent="/*">
+			<feature name="PinterestPlugin">
+				<param name="ios-package" value="PinterestPlugin"/>
+			</feature>
+		</config-file>
+		<header-file src="src/ios/PinterestPlugin.h"/>
+		<source-file src="src/ios/PinterestPlugin.m"/>
+		<!-- release pinterest framework -->
+		<framework src="src/ios/Pinterest.embeddedframework/Pinterest.framework" custom="true"/>
+	</platform>
+</plugin>
