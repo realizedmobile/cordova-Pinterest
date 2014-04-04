@@ -21,6 +21,15 @@
 		<source-file src="src/android/libs/pinit-sdk-1.0.jar" target-dir="libs/" />
 		<source-file src="src/android/PinterestPlugin.java" target-dir="src/com/realizedmobile/pinterestplugin/" />
 	</platform>
+	<platform name="amazon-fireos">
+		<config-file target="res/xml/config.xml" parent="/*">
+			<feature name="PinterestPlugin">
+				<param name="android-package" value="com.realizedmobile.pinterestplugin.PinterestPlugin"/>
+			</feature>
+		</config-file>
+		<source-file src="src/android/libs/pinit-sdk-1.0.jar" target-dir="libs/" />
+		<source-file src="src/android/PinterestPlugin.java" target-dir="src/com/realizedmobile/pinterestplugin/" />
+	</platform>
 	<!-- ios -->
 	<platform name="ios">
 		<config-file target="config.xml" parent="/*">
