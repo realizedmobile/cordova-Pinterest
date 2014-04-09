@@ -45,7 +45,7 @@ Example:
 	
 
 ## More Info
-Pinterest includes libraries from Pinterest SDK for iOS and for Android.
+Pinterest plugin includes libraries from Pinterest SDK for iOS and for Android.
 	
 ## License ##
 The MIT License
