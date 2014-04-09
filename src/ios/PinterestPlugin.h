@@ -15,7 +15,7 @@
 
 - (void)initPinterest:(CDVInvokedUrlCommand*)command;;
 - (void)pin:(CDVInvokedUrlCommand*)command;
-- (void)isPinterstestInstalled:(CDVInvokedUrlCommand*)command;
+- (void)canPinWithSDK:(CDVInvokedUrlCommand*)command;
 
 
 @end

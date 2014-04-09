@@ -46,7 +46,7 @@ var app = {
 		);
 	},
 	isAvailable: function() {
-		PinterestPlugin.isPinterstestInstalled(function() {
+		PinterestPlugin.canPinWithSDK(function() {
 			alert("Pinterest available");
 		},
 		function() {

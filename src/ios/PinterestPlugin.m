@@ -44,13 +44,13 @@
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
     
 }
-- (void)isPinterstestInstalled:(CDVInvokedUrlCommand*)command {
+- (void)canPinWithSDK:(CDVInvokedUrlCommand*)command {
 	CDVPluginResult* pluginResult = nil;
     
 	if ([pinterest canPinWithSDK]) {
 		pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
 	} else {
-		pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"Pinterest not available"];
+		pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"Can't pin with SDK"];
 	}
 	[self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }

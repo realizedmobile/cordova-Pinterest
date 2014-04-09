@@ -16,7 +16,7 @@ import com.pinterest.pinit.PinItListener;
 public class PinterestPlugin extends CordovaPlugin {
 	public static final String TAG = "PinterestPlugin";
 	public static final String INIT = "initPinterest";
-	public static final String AVAILABLE = "isPinterstestInstalled";
+	public static final String AVAILABLE = "canPinWithSDK";
 	public static final String PIN = "pin";
 
 	/**
