@@ -16,6 +16,7 @@ import com.pinterest.pinit.PinItListener;
 public class PinterestPlugin extends CordovaPlugin {
 	public static final String TAG = "PinterestPlugin";
 	public static final String INIT = "initPinterest";
+	public static final String AVAILABLE = "isPinterstestInstalled";
 	public static final String PIN = "pin";
 
 	/**
@@ -87,6 +88,10 @@ public class PinterestPlugin extends CordovaPlugin {
         			pinIt.doPinIt(getApplicationContext());
                 }
             });
+			result = true;
+		} else if (AVAILABLE.equals(action)) {
+			Log.v(TAG, "Checking pinterest availability");
+			callbackContext.error(action + "  is not Supported on Android");
 			result = true;
 		}
 		return result;
