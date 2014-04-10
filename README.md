@@ -20,15 +20,16 @@ init takes 3 arguments;
 Example:
 	Pinterest.init("ClientID", successHandler, errorHandler);
 
-To check if Pinterest App is installed, use isPinterstestInstalled()
-isPinterstestInstalled takes 2 arguments;
+To check if a version of the Pinterest app is installed, use canPinWidthSDK(). Currently, this feature only supports iOS, but for Android, Pinterest SDk will redirect users to the store if Pinterest is not available on their device.
+
+canPinWithSDK takes 2 arguments;
 
 	1)	successHandler - a function that will be called on success
 	2)	errorHandler - a function that will be called on error.
 	
 Example:
 	
-	Pinterest.isPinterstestInstalled(successHandler, errorHandler);
+	Pinterest.canPinWithSDK(successHandler, errorHandler);
 
 To pin, use pin()
 pin takes 5 arguments;
