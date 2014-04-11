@@ -1,14 +1,14 @@
 # Cordova Pinterest Plugin
-> Pinterest plugin for iOS, Android and Kindle, allows to use Pinterest in a Cordova app. Currently it's supporting only 'pinning' feature. If you want to contribute to this project, you're more than welcome to implement more features and send out a pull request.
+> Pinterest plugin for iOS, Android and Kindle, provides Pinterest SDK support in a Cordova app. Currently it only supports the 'pinning' feature. If you want to contribute to this project, you're more than welcome to implement more features and send us a pull request.
 
 ## Preparation:
-Before using this plugin, you need to set up a Pinterest Client ID. Go to [Pinterest Dev Site](https://developers.pinterest.com/manage/), login and generate client ID.
+Before using this plugin, you need to set up a Pinterest Client ID. Go to [Pinterest Dev Site](https://developers.pinterest.com/manage/), login and generate a client ID.
 
 ## Installation:
 cordova plugins add https://github.com/realizedmobile/cordova-Pinterest.git
 
 ## Usage
-The plugin creates the object `Pinterest'
+The plugin creates the object `PinterestPlugin'
 
 After onDeviceReady, you have to initialize Pinterest with your client ID before using it;
 init takes 3 arguments;
@@ -20,7 +20,7 @@ init takes 3 arguments;
 Example:
 	Pinterest.init("ClientID", successHandler, errorHandler);
 
-To check if a version of the Pinterest app is installed, use canPinWidthSDK(). Currently, this feature only supports iOS, but for Android, Pinterest SDk will redirect users to the store if Pinterest is not available on their device.
+To check if a version of the Pinterest app is installed, use canPinWidthSDK(). Currently, this feature only supports iOS, while on Android the Pinterest SDK will redirect users to the Google Play store if Pinterest is not available on their device.
 
 canPinWithSDK takes 2 arguments;
 
@@ -42,11 +42,11 @@ pin takes 5 arguments;
 
 Example:
 
-	PinterestPlugin.pin("http://healthyhappysmart.com/", "http://healthyhappysmart.com/assets/images/app-paleo.png", "Test", successHandler, errorHandler);
+	PinterestPlugin.pin("http://placekitten.com", "http://placekitten.com/500/400", "Test", successHandler, errorHandler);
 	
 
 ## More Info
-Pinterest plugin includes libraries from Pinterest SDK for iOS and for Android.
+The plugin includes the necessary libraries for the Pinterest SDK on iOS and Android. These will be installed when using Plugman to add the plugin.
 	
 ## License ##
 The MIT License
