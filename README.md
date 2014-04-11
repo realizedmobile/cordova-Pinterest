@@ -1,5 +1,5 @@
 # Cordova Pinterest Plugin
-> Pinterest plugin for iOS, Android and Kindle, provides Pinterest SDK support in a Cordova app. Currently it only supports the 'pinning' feature. If you want to contribute to this project, you're more than welcome to implement more features and send us a pull request.
+> Pinterest plugin for iOS, Android and Kindle, provides Pinterest SDK support in a Cordova app. Currently it only supports the 'pinning' feature. If you want to contribute to this project, you're welcome to send us a pull request.
 
 ## Preparation:
 Before using this plugin, you need to set up a Pinterest Client ID. Go to [Pinterest Dev Site](https://developers.pinterest.com/manage/), login and generate a client ID.
@@ -8,7 +8,7 @@ Before using this plugin, you need to set up a Pinterest Client ID. Go to [Pinte
 cordova plugins add https://github.com/realizedmobile/cordova-Pinterest.git
 
 ## Usage
-The plugin creates the object `PinterestPlugin'
+The plugin creates the object `PinterestPlugin`
 
 After onDeviceReady, you have to initialize Pinterest with your client ID before using it;
 init takes 3 arguments;
