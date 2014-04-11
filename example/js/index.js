@@ -54,8 +54,8 @@ var app = {
 		});
 	},
 	pin: function() {
-		PinterestPlugin.pin("http://healthyhappysmart.com/",
-			"http://healthyhappysmart.com/assets/images/app-paleo.png", "Test",
+		PinterestPlugin.pin("http://placekitten.com",
+			"http://placekitten.com/500/400", "Test",
 			function() {
 				alert("Pinterest pin success.");
 			},
