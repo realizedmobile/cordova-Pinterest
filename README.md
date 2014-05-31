@@ -13,12 +13,12 @@ The plugin creates the object `PinterestPlugin`
 After onDeviceReady, you have to initialize Pinterest with your client ID before using it;
 init takes 3 arguments;
 	
-	1)  clientID - a Pinterest Client ID
+	1)      clientID - a Pinterest Client ID
 	1)	successHandler - a function that will be called on success
 	2)	errorHandler - a function that will be called on error.
 
 Example:
-	Pinterest.init("ClientID", successHandler, errorHandler);
+	PinterestPlugin.init("ClientID", successHandler, errorHandler);
 
 To check if a version of the Pinterest app is installed, use canPinWidthSDK(). Currently, this feature only supports iOS, while on Android the Pinterest SDK will redirect users to the Google Play store if Pinterest is not available on their device.
 
@@ -29,7 +29,7 @@ canPinWithSDK takes 2 arguments;
 	
 Example:
 	
-	Pinterest.canPinWithSDK(successHandler, errorHandler);
+	PinterestPlugin.canPinWithSDK(successHandler, errorHandler);
 
 To pin, use pin()
 pin takes 5 arguments;
