@@ -14,7 +14,7 @@
 
     self.clientId = [[NSString alloc] initWithString:[command.arguments objectAtIndex:0]];
     if (self.pinterest != nil) {
-        [pinterest release];
+        self.pinterest = nil;
     }
     self.pinterest = [[Pinterest alloc] initWithClientId:self.clientId urlSchemeSuffix:@"prod"];
     if (self.pinterest != nil) {
