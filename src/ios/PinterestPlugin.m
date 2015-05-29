@@ -13,10 +13,7 @@
     CDVPluginResult* pluginResult = nil;
 
     self.clientId = [[NSString alloc] initWithString:[command.arguments objectAtIndex:0]];
-    if (self.pinterest != nil) {
-        self.pinterest = nil;
-    }
-    self.pinterest = [[Pinterest alloc] initWithClientId:self.clientId urlSchemeSuffix:@"prod"];
+    self.pinterest = [[[Pinterest alloc] initWithClientId:self.clientId urlSchemeSuffix:@"prod"]autorelease];
     if (self.pinterest != nil) {
         NSLog(@"Pinterest Plugin initalized with clientID: %@", self.clientId);
         pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
