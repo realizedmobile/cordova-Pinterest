@@ -1,0 +1,26 @@
+{
+  "name": "salesfloor-pinterest-plugin",
+  "version": "1.0.0",
+  "description": "Pinterest plugin for cordova",
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Salesfloor/cordova-Pinterest.git"
+  },
+  "keywords": [
+    "pinterest",
+    "salesfloor"
+  ],
+  "author": "Salesfloor <mike@salesfloor.net> (http://salesfloor.net)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Salesfloor/cordova-Pinterest/issues"
+  },
+  "homepage": "https://github.com/Salesfloor/cordova-Pinterest#readme"
+}
