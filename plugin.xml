@@ -9,7 +9,7 @@
 		<engine name="cordova" version=">=3.0.0"/>
 	</engines>
 	<js-module src="www/pinterest.js" name="PinterestPlugin">
-		<clobbers target="PinterestPlugin"/>
+		<clobbers target="window.PinterestPlugin"/>
 	</js-module>
 	<!-- android -->
 	<platform name="android">
