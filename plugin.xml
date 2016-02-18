@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="com.realizedmobile.PinterestPlugin" version="1.0.0">
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="com.salesfloor.PinterestPlugin" version="1.0.5">
 	<name>PinterestPlugin</name>
 	<description>Cordova plugin that handles Pinterest integration in mobile apps.</description>
-	<author>RealizedMobile</author>
+	<author>Salesfloor</author>
 	<keywords>pinterest,cordova,realizedmobile</keywords>
 	<license>Apache 2.0 License</license>
 	<engines>
 		<engine name="cordova" version=">=3.0.0"/>
 	</engines>
 	<js-module src="www/pinterest.js" name="PinterestPlugin">
-		<clobbers target="PinterestPlugin"/>
+		<clobbers target="window.PinterestPlugin"/>
 	</js-module>
 	<!-- android -->
 	<platform name="android">
