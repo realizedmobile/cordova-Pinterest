@@ -1,6 +1,6 @@
 {
   "name": "salesfloor-pinterest-plugin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Pinterest plugin for cordova",
   "main": "index.js",
   "directories": {
