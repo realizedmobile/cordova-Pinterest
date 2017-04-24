@@ -11,6 +11,7 @@
 	<js-module src="www/pinterest.js" name="PinterestPlugin">
 		<clobbers target="window.PinterestPlugin"/>
 	</js-module>
+	<preference name="APP_ID" default="" />
 	<!-- android -->
 	<platform name="android">
 		<config-file target="res/xml/config.xml" parent="/*">
