@@ -23,7 +23,7 @@
 
     [PDKPin pinWithImageURL:imageURL
                        link:sourceURL
-         suggestedBoardName:@""
+         suggestedBoardName:@"test"
                        note:description
                 withSuccess:^ {
                   CDVPluginResult* pluginResult = nil;
