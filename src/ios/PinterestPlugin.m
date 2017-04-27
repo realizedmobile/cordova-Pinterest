@@ -44,5 +44,14 @@
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
+/**
+ * This should handle the callback from Pinterest, whenever they decide to actually call it.
+ */
+- (void)handleOpenURL:(NSNotification *)notification {
+    NSURL* url = [notification object];
+    if ([url isKindOfClass:[NSURL class]]) {
+        [[PDKClient sharedInstance] handleCallbackURL:url];
+    }
+}
 
 @end
