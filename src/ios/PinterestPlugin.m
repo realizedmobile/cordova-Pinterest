@@ -8,7 +8,7 @@
 
 @implementation PinterestPlugin
 
-- (void) pluginInitialize:
+- (void) pluginInitialize
 {
     NSString* appId = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"PinterestAppId"];
     [PDKClient configureSharedInstanceWithAppId:appId];

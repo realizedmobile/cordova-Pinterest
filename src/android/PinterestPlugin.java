@@ -19,13 +19,14 @@ public class PinterestPlugin extends CordovaPlugin {
 
 	@Override
 	protected void pluginInitialize() {
-		final String id = getApplicationContext().getResources().getString(R.string.pinterest_app_id);
+		Context ctx = getApplicationContext();
+		int identifier = ctx.getResources().getIdentifier("pinterest_app_id", "string", ctx.getPackageName());
+		final String id = ctx.getResources().getString(identifier);
 		cordova.getThreadPool().execute(new Runnable() {
 				public void run() {
 					PinItButton.setPartnerId(id);
 				}
 		});
-		result = true;
 	}
 
 	/**
