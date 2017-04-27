@@ -5,8 +5,6 @@
 
 @interface PinterestPlugin : CDVPlugin
 
-- (void)initPinterest:(CDVInvokedUrlCommand*)command;;
 - (void)pin:(CDVInvokedUrlCommand*)command;
-
 
 @end

@@ -1,5 +1,5 @@
 //
-//  Pinterest.m
+//  PinterestPlugin.m
 
 #import "PinterestPlugin.h"
 
@@ -8,7 +8,7 @@
 
 @implementation PinterestPlugin
 
-- (void) initPinterest:(CDVInvokedUrlCommand*)command
+- (void) pluginInitialize:
 {
     NSString* appId = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"PinterestAppId"];
     [PDKClient configureSharedInstanceWithAppId:appId];
@@ -35,6 +35,15 @@
                    pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:error.localizedDescription];
                    [weakSelf.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
                  }];
+
+    // As of 2017-04-27, the callbacks of pinWithImageURL are not being called,
+    // so we have to consider that the pin was done,
+    // or at least that the user was given the possibility of doing it.
+    CDVPluginResult* pluginResult = nil;
+    pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+}
+
 }
 
 @end
