@@ -11,12 +11,16 @@
 	<js-module src="www/pinterest.js" name="PinterestPlugin">
 		<clobbers target="window.PinterestPlugin"/>
 	</js-module>
+	<preference name="APP_ID" default="" />
 	<!-- android -->
 	<platform name="android">
 		<config-file target="res/xml/config.xml" parent="/*">
 			<feature name="PinterestPlugin">
 				<param name="android-package" value="com.realizedmobile.pinterestplugin.PinterestPlugin"/>
 			</feature>
+		</config-file>
+		<config-file target="./res/values/strings.xml" parent="/resources">
+			<string name="pinterest_app_id">$APP_ID</string>
 		</config-file>
 		<source-file src="src/android/libs/pinit-sdk-1.0.jar" target-dir="libs/" />
 		<source-file src="src/android/PinterestPlugin.java" target-dir="src/com/realizedmobile/pinterestplugin/" />
@@ -37,9 +41,33 @@
 				<param name="ios-package" value="PinterestPlugin"/>
 			</feature>
 		</config-file>
+
+    <config-file target="*-Info.plist" parent="CFBundleURLTypes">
+        <array>
+            <dict>
+                <key>CFBundleURLName</key>
+                <string></string>
+                <key>CFBundleURLSchemes</key>
+                <array>
+                    <string>pdk$APP_ID</string>
+                </array>
+            </dict>
+        </array>
+    </config-file>
+
+    <config-file target="*-Info.plist" parent="PinterestAppId">
+        <string>$APP_ID</string>
+    </config-file>
+
+    <config-file target="*-Info.plist" parent="LSApplicationQueriesSchemes">
+        <array>
+            <string>pinterestsdk.v1</string>
+        </array>
+		</config-file>
+
 		<header-file src="src/ios/PinterestPlugin.h"/>
 		<source-file src="src/ios/PinterestPlugin.m"/>
-		<!-- release pinterest framework -->
-		<framework src="src/ios/Pinterest.embeddedframework/Pinterest.framework" custom="true"/>
+
+		<framework src="PinterestSDK" type="podspec" spec="~> 1.0.2" />
 	</platform>
 </plugin>

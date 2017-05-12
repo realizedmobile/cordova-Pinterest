@@ -15,9 +15,19 @@ import com.pinterest.pinit.PinItListener;
 
 public class PinterestPlugin extends CordovaPlugin {
 	public static final String TAG = "PinterestPlugin";
-	public static final String INIT = "initPinterest";
-	public static final String AVAILABLE = "canPinWithSDK";
 	public static final String PIN = "pin";
+
+	@Override
+	protected void pluginInitialize() {
+		Context ctx = getApplicationContext();
+		int identifier = ctx.getResources().getIdentifier("pinterest_app_id", "string", ctx.getPackageName());
+		final String id = ctx.getResources().getString(identifier);
+		cordova.getThreadPool().execute(new Runnable() {
+				public void run() {
+					PinItButton.setPartnerId(id);
+				}
+		});
+	}
 
 	/**
 	 * Gets the application context from cordova's main activity.
@@ -26,9 +36,9 @@ public class PinterestPlugin extends CordovaPlugin {
 	private Context getApplicationContext() {
 		return this.webView.getContext();
 	}
-	
+
 	@Override
-    public boolean execute(String action, CordovaArgs args, 
+    public boolean execute(String action, CordovaArgs args,
     		final CallbackContext callbackContext) throws JSONException {
     	boolean result = false;
 		final String sourceUrl, imageUrl, description;
@@ -59,23 +69,11 @@ public class PinterestPlugin extends CordovaPlugin {
 
 	    };
 		Log.v(TAG, "execute: action=" + action);
-		if (INIT.equals(action)) {
-			Log.v(TAG, "Init: client ID=" + args.getString(0));
-			final String id = args.getString(0);
-			cordova.getThreadPool().execute(new Runnable() {
-                public void run() {
-        			PinItButton.setPartnerId(id);
-        			PinItButton.setDebugMode(true);
-                    callbackContext.success(); // Thread-safe.
-                }
-            });
-			result = true;
-		}
-		else if (PIN.equals(action)) {
+		if (PIN.equals(action)) {
 			sourceUrl = args.getString(0);
 			imageUrl = args.getString(1);
 			description = args.getString(2);
-			Log.v(TAG, "PinIt: source=" + sourceUrl + ", imageUrl: " + 
+			Log.v(TAG, "PinIt: source=" + sourceUrl + ", imageUrl: " +
 					imageUrl + ", description: " + description);
 			cordova.getThreadPool().execute(new Runnable() {
                 public void run() {
@@ -89,13 +87,9 @@ public class PinterestPlugin extends CordovaPlugin {
                 }
             });
 			result = true;
-		} else if (AVAILABLE.equals(action)) {
-			Log.v(TAG, "Checking pinterest availability");
-			callbackContext.error(action + "  is not Supported on Android");
-			result = true;
 		}
 		return result;
-		
+
 	}
 
 
