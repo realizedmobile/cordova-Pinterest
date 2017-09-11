@@ -1,5 +1,5 @@
 {
-  "name": "salesfloor-pinterest-plugin",
+  "name": "cordova-Pinterest",
   "version": "1.0.5",
   "description": "Pinterest plugin for cordova",
   "main": "index.js",
@@ -22,5 +22,12 @@
   "bugs": {
     "url": "https://github.com/Salesfloor/cordova-Pinterest/issues"
   },
-  "homepage": "https://github.com/Salesfloor/cordova-Pinterest#readme"
+  "homepage": "https://github.com/Salesfloor/cordova-Pinterest#readme",
+  "cordova": {
+    "id": "cordova-Pinterest",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  }
 }
