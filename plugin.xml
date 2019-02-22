@@ -22,6 +22,7 @@
 		<config-file target="./res/values/strings.xml" parent="/resources">
 			<string name="pinterest_app_id">$APP_ID</string>
 		</config-file>
+		<lib-file src="src/android/libs/pinit-sdk-1.0.jar" />
 		<source-file src="src/android/libs/pinit-sdk-1.0.jar" target-dir="libs/" />
 		<source-file src="src/android/PinterestPlugin.java" target-dir="src/com/realizedmobile/pinterestplugin/" />
 	</platform>
