@@ -3,8 +3,8 @@
 
 #import "PinterestPlugin.h"
 
-#import "PDKClient.h"
-#import "PDKPin.h"
+#import <PinterestSDK/PDKClient.h>
+#import <PinterestSDK/PDKPin.h>
 
 @implementation PinterestPlugin
 
